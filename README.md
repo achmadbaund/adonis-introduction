@@ -21,3 +21,13 @@ PG_PASSWORD=
 PG_DB_NAME=
 
 ```
+Usage in the following example, we select all the posts from the `posts` table.
+```sh
+import Database from '@ioc:Adonis/Lucid/Database'
+import Route from '@ioc:Adonis/Core/Route'
+
+Route.get('posts', async () => {
+  return Database.from('posts').select('*')
+})
+
+```
